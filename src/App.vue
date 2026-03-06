@@ -299,7 +299,7 @@ onBeforeUnmount(() => {
 
     <section v-else class="loading-state">
       <p class="section-kicker">Load Error</p>
-      <h2>内容加载失败</h2>
+      <h2>内容加载失败。</h2>
       <p>{{ loadError }}</p>
     </section>
 
