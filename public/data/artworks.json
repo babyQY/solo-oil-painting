@@ -1,27 +1,27 @@
 [
   {
     "slug": "autumn-river",
-    "title": "秋河",
+    "title": "雪岭静湖",
     "category": "风景",
-    "series": "河岸记录",
+    "series": "山地湖景",
     "year": "2026",
     "medium": "布面油画",
     "size": "80 x 60 cm",
-    "description": "这里写作品介绍。",
-    "tags": ["风景"],
+    "description": "画面以静止的高山湖面为中心，将雪岭、密林与近岸岩石纳入同一片清冷而明亮的空气中。远处山体的冷白与湖岸林木的深绿形成鲜明对照，水中的倒影又让整个空间更安静、更悠长，像是在捕捉山地清晨尚未被打破的片刻宁静。",
+    "tags": ["风景", "雪山", "湖泊", "森林", "倒影"],
     "featured": true,
     "cover": {
       "src": "/paintings/works/autumn-river-full.webp",
-      "alt": "秋河封面图"
+      "alt": "雪岭静湖封面图"
     },
     "fullImage": {
       "src": "/paintings/works/autumn-river-full.webp",
-      "alt": "秋河完整图"
+      "alt": "雪岭静湖完整图"
     },
     "details": [
       {
         "src": "/paintings/details/autumn-river-detail-1.webp",
-        "alt": "秋河细节图一"
+        "alt": "雪岭静湖细节图一"
       }
     ]
   },
