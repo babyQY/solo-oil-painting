@@ -297,7 +297,7 @@ img {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   padding: 0;
   margin: 36px 0 0;
@@ -325,6 +325,69 @@ img {
 .featured-stack {
   display: grid;
   gap: 14px;
+}
+
+.hero-carousel-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  border-radius: 22px;
+  padding: 0;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero-carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.hero-carousel-card:hover img {
+  transform: scale(1.02);
+}
+
+.hero-carousel-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 20px;
+  background: linear-gradient(180deg, transparent, rgba(8, 8, 8, 0.85));
+}
+
+.hero-carousel-overlay strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.22rem;
+}
+
+.hero-carousel-overlay small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.hero-carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.hero-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.hero-carousel-dot-active {
+  width: 22px;
+  background: linear-gradient(90deg, #d39b5b, #985e33);
 }
 
 .featured-card {
@@ -509,6 +572,21 @@ img {
   position: relative;
   overflow: hidden;
   border-radius: 18px;
+}
+
+.painting-frame {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.18)),
+    rgba(255, 255, 255, 0.02);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 14px 28px rgba(0, 0, 0, 0.26);
+}
+
+.painting-frame-image {
+  border-radius: 14px;
 }
 
 .artwork-card-image img {
@@ -899,6 +977,10 @@ body::-webkit-scrollbar-corner,
   .modal-thumbnails,
   .featured-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .hero-carousel-card {
+    min-height: 320px;
   }
 
   .hero-actions,

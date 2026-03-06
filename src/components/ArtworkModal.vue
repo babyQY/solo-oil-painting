@@ -82,8 +82,8 @@ watch(
       </div>
 
       <div class="modal-layout">
-        <figure class="modal-hero-image">
-          <img :src="activeImage.src" :alt="activeImage.alt" decoding="async" sizes="100vw" />
+        <figure class="modal-hero-image painting-frame">
+          <img class="painting-frame-image" :src="activeImage.src" :alt="activeImage.alt" decoding="async" sizes="100vw" />
           <figcaption>{{ activeImage.alt }}</figcaption>
         </figure>
 
@@ -113,18 +113,6 @@ watch(
             </button>
           </div>
 
-          <div class="detail-grid">
-            <div class="detail-note">
-              <strong>浏览提示</strong>
-              <p>点击缩略图可切换完整图与局部细节图，按键盘左右方向键可切换到上一幅或下一幅作品。</p>
-            </div>
-            <div class="detail-note">
-              <strong>后续维护</strong>
-              <p>
-                你只要在 `public/data/artworks.json` 中为 `details` 补上更多图片路径，就能继续扩展这一块内容。
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

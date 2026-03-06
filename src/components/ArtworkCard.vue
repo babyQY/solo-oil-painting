@@ -12,7 +12,7 @@ const emit = defineEmits<{
 
 <template>
   <button class="artwork-card" type="button" @click="emit('select', artwork)">
-    <div class="artwork-card-image">
+    <div class="artwork-card-image painting-frame">
       <img
         :src="artwork.cover.src"
         :alt="artwork.cover.alt"

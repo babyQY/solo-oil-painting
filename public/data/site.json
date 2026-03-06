@@ -1,52 +1,38 @@
 {
-  "label": "Solo Oil Painting Archive",
-  "artistName": "你的名字",
-  "title": "把油画作品做成一座可被随时进入的线上展厅",
-  "heroNote": "静态托管、零服务器成本、适合长期维护的个人作品网站。",
-  "description": "这个站点骨架面向个人艺术家作品集展示，强调完整图、局部细节图、系列信息与创作说明的沉浸式浏览体验。你后续只需要替换图片、补充 JSON 数据并重新部署，即可公开分享给任何人访问。",
-  "location": "中国 / 你的城市",
-  "email": "hello@example.com",
+  "label": "阿彬的画",
+  "artistName": "阿彬的画",
+  "title": "阿彬的画｜个人油画线上展厅",
+  "heroNote": "以作品本身为中心，持续更新、长期沉淀的个人油画档案。",
+  "description": "这里集中展示阿彬的油画创作：完整画面、局部细节、系列信息与创作说明。整体风格偏安静、可长期维护，方便你在不同平台统一分享“阿彬的画”这一品牌。",
+  "location": "中国",
+  "email": "18358274764@163.com",
   "socialLinks": [
     {
       "label": "小红书",
-      "href": "https://example.com/xiaohongshu"
+      "href": "https://xhslink.com/m/2z893CUvZ79"
     },
     {
-      "label": "Instagram",
-      "href": "https://example.com/instagram"
+      "label": "哔哩哔哩",
+      "href": "https://b23.tv/YPLhg6H"
     },
     {
       "label": "Email",
-      "href": "mailto:hello@example.com"
+      "href": "mailto:18358274764@163.com"
     }
   ],
   "introCards": [
     {
       "title": "完整图 + 细节图并列展示",
-      "body": "每幅作品既能看到完整画面，也能在弹层中集中浏览笔触、肌理、边缘与色层的局部细节。"
+      "body": "每幅作品既能看到完整画面，也能在弹层中集中浏览笔触、肌理、边缘与色层变化。"
     },
     {
       "title": "按题材或系列浏览",
-      "body": "画廊支持标签筛选，适合你将 40 幅作品按风景、静物、人像或自定义系列进行整理。"
+      "body": "画廊支持按分类与关键词筛选，便于持续扩展阿彬的画各个系列。"
     },
     {
       "title": "自动压缩、完全静态、免费托管",
-      "body": "即使你放入 5M 左右的大图，构建前也会自动压缩成适合网页展示的图片，再发布到免费平台进行 CDN 分发。"
+      "body": "图片与文字都可持续迭代，适合把社交平台内容沉淀为统一、可检索的作品档案。"
     }
   ],
-  "processSteps": [
-    {
-      "title": "步骤 1：放置图片",
-      "body": "把原始作品图放进 source-images/works/，把原始细节图放进 source-images/details/。"
-    },
-    {
-      "title": "步骤 2：修改 JSON",
-      "body": "编辑 public/data/artworks.json，把每幅作品的标题、尺寸、年份、标签和压缩后图片路径填进去。"
-    },
-    {
-      "title": "步骤 3：重新构建部署",
-      "body": "执行 npm run build，图片会自动压缩，然后把 dist 发布到免费静态托管平台即可更新网站。"
-    }
-  ],
-  "footer": "Vue 3 + Vite 静态作品站，可零成本部署并长期维护。"
+  "footer": "阿彬的画 · 在热爱中找到生命力"
 }

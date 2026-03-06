@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import ArtworkCard from './components/ArtworkCard.vue'
 import ArtworkModal from './components/ArtworkModal.vue'
 import { loadArtworks, loadSiteMeta } from './data/content'
@@ -44,6 +44,40 @@ const activeArtwork = computed(() =>
 )
 
 const artworkCountLabel = computed(() => String(artworks.value.length).padStart(2, '0'))
+const featuredCarouselIndex = ref(0)
+
+const featuredCarouselItems = computed(() =>
+  featuredArtworks.value.length > 0 ? featuredArtworks.value : artworks.value.slice(0, 1),
+)
+
+const activeFeaturedArtwork = computed(
+  () => featuredCarouselItems.value[featuredCarouselIndex.value] ?? null,
+)
+
+let featuredAutoplayTimer: number | undefined
+
+function stopFeaturedAutoplay() {
+  if (featuredAutoplayTimer !== undefined) {
+    window.clearInterval(featuredAutoplayTimer)
+    featuredAutoplayTimer = undefined
+  }
+}
+
+function startFeaturedAutoplay() {
+  stopFeaturedAutoplay()
+
+  if (featuredCarouselItems.value.length <= 1) {
+    return
+  }
+
+  featuredAutoplayTimer = window.setInterval(() => {
+    featuredCarouselIndex.value = (featuredCarouselIndex.value + 1) % featuredCarouselItems.value.length
+  }, 4500)
+}
+
+function goToFeatured(index: number) {
+  featuredCarouselIndex.value = index
+}
 
 function openArtwork(artwork: Artwork) {
   selectedArtworkSlug.value = artwork.slug
@@ -86,6 +120,17 @@ watch(filteredArtworks, (nextArtworks) => {
   }
 })
 
+watch(
+  featuredCarouselItems,
+  (items) => {
+    if (featuredCarouselIndex.value >= items.length) {
+      featuredCarouselIndex.value = 0
+    }
+    startFeaturedAutoplay()
+  },
+  { immediate: true },
+)
+
 onMounted(async () => {
   try {
     const [site, items] = await Promise.all([loadSiteMeta(), loadArtworks()])
@@ -96,6 +141,10 @@ onMounted(async () => {
   } finally {
     isLoading.value = false
   }
+})
+
+onBeforeUnmount(() => {
+  stopFeaturedAutoplay()
 })
 </script>
 
@@ -112,9 +161,7 @@ onMounted(async () => {
         </a>
 
         <nav class="nav">
-          <a href="#featured">精选</a>
           <a href="#gallery">作品</a>
-          <a href="#process">维护</a>
           <a href="#contact">联系</a>
         </nav>
       </header>
@@ -128,104 +175,65 @@ onMounted(async () => {
 
           <div class="hero-actions">
             <a class="button button-primary" href="#gallery">进入作品画廊</a>
-            <a class="button button-secondary" href="#process">查看维护方式</a>
+            <a class="button button-secondary" href="#contact">联系阿彬</a>
           </div>
 
           <ul class="hero-stats" aria-label="站点亮点">
             <li>
               <strong>{{ artworkCountLabel }}</strong>
-              <span>当前示例作品</span>
+              <span>当前在线作品</span>
             </li>
             <li>
-              <strong>0 元</strong>
-              <span>免费静态托管</span>
-            </li>
-            <li>
-              <strong>CDN</strong>
-              <span>可公开访问分发</span>
+              <strong>阿彬的画</strong>
+              <span>持续更新中</span>
             </li>
           </ul>
         </div>
 
-        <div class="hero-panel">
+        <div class="hero-panel" @mouseenter="stopFeaturedAutoplay" @mouseleave="startFeaturedAutoplay">
           <p class="panel-label">展厅速览</p>
-          <div class="featured-stack">
-            <button
-              v-for="artwork in featuredArtworks"
-              :key="artwork.slug"
-              class="featured-card"
-              type="button"
-              @click="openArtwork(artwork)"
-            >
-              <img :src="artwork.cover.src" :alt="artwork.cover.alt" loading="lazy" decoding="async" />
-              <div class="featured-card-copy">
-                <span>{{ artwork.year }} · {{ artwork.category }}</span>
-                <strong>{{ artwork.title }}</strong>
-                <small>{{ artwork.series }}</small>
+          <template v-if="activeFeaturedArtwork">
+            <button class="hero-carousel-card" type="button" @click="openArtwork(activeFeaturedArtwork)">
+              <img
+                :src="activeFeaturedArtwork.fullImage.src"
+                :alt="activeFeaturedArtwork.fullImage.alt"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="hero-carousel-overlay">
+                <span>{{ activeFeaturedArtwork.year }} · {{ activeFeaturedArtwork.category }}</span>
+                <strong>{{ activeFeaturedArtwork.title }}</strong>
+                <small>{{ activeFeaturedArtwork.series }}</small>
               </div>
             </button>
-          </div>
+
+            <div v-if="featuredCarouselItems.length > 1" class="hero-carousel-dots" aria-label="轮播切换">
+              <button
+                v-for="(artwork, index) in featuredCarouselItems"
+                :key="artwork.slug"
+                class="hero-carousel-dot"
+                :class="{ 'hero-carousel-dot-active': index === featuredCarouselIndex }"
+                type="button"
+                :aria-label="`切换到第 ${index + 1} 张`"
+                @click="goToFeatured(index)"
+              />
+            </div>
+          </template>
         </div>
       </header>
 
       <main>
-        <section class="section intro-section">
-          <div class="section-heading">
-            <p class="section-kicker">关于这个站</p>
-            <h2>偏美术馆感的个人线上作品集</h2>
-            <p>
-              这个项目专门针对你这种“本地维护图片和 JSON，再重新部署”的工作流来设计，
-              不需要服务器、不需要数据库，也不需要任何付费服务。
-            </p>
-          </div>
-
-          <div class="intro-grid">
-            <article v-for="card in siteMeta.introCards" :key="card.title" class="info-card">
-              <p class="section-kicker">特色</p>
-              <h3>{{ card.title }}</h3>
-              <p>{{ card.body }}</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="featured" class="section">
-          <div class="section-heading section-heading-inline">
-            <div>
-              <p class="section-kicker">Curated Selection</p>
-              <h2>精选作品</h2>
-            </div>
-            <p class="section-note">这里自动展示 `featured: true` 的作品。</p>
-          </div>
-
-          <div class="featured-gallery">
-            <button
-              v-for="artwork in featuredArtworks"
-              :key="artwork.slug"
-              class="featured-gallery-card"
-              type="button"
-              @click="openArtwork(artwork)"
-            >
-              <img :src="artwork.fullImage.src" :alt="artwork.fullImage.alt" loading="lazy" decoding="async" />
-              <div class="featured-gallery-overlay">
-                <p>{{ artwork.category }} / {{ artwork.year }}</p>
-                <h3>{{ artwork.title }}</h3>
-                <span>{{ artwork.medium }}</span>
-              </div>
-            </button>
-          </div>
-        </section>
-
         <section id="gallery" class="section">
           <div class="section-heading section-heading-inline">
             <div>
               <p class="section-kicker">作品档案</p>
               <h2>画廊浏览</h2>
             </div>
-            <p class="section-note">支持按分类筛选，并可按标题、系列或标签搜索。</p>
+            <p class="section-note">极简浏览，支持搜索与详情放大。</p>
           </div>
 
           <div class="gallery-toolbar">
-            <div class="filter-group" aria-label="作品分类">
+            <div v-if="categories.length > 2" class="filter-group" aria-label="作品分类">
               <button
                 v-for="category in categories"
                 :key="category"
@@ -246,7 +254,7 @@ onMounted(async () => {
 
           <div class="gallery-summary">
             <p>共展示 {{ filteredArtworks.length }} 幅作品</p>
-            <p>图片与信息来自 `public/data/artworks.json` 和 `public/paintings/`。</p>
+            <p>点击任意作品可查看完整图与细节图轮播。</p>
           </div>
 
           <div class="artwork-grid">
@@ -261,44 +269,6 @@ onMounted(async () => {
           <div v-if="filteredArtworks.length === 0" class="empty-state">
             <h3>没有匹配到作品</h3>
             <p>试试切换分类或清空搜索关键字。</p>
-          </div>
-        </section>
-
-        <section id="process" class="section">
-          <div class="section-heading section-heading-inline">
-            <div>
-              <p class="section-kicker">维护方式</p>
-              <h2>以后只做这三件事</h2>
-            </div>
-            <p class="section-note">很适合你逐步把 40 幅作品整理进来。</p>
-          </div>
-
-          <div class="process-grid">
-            <article v-for="step in siteMeta.processSteps" :key="step.title" class="process-card">
-              <span class="process-index">{{ siteMeta.processSteps.indexOf(step) + 1 }}</span>
-              <h3>{{ step.title }}</h3>
-              <p>{{ step.body }}</p>
-            </article>
-          </div>
-
-          <div class="about-grid">
-            <article class="info-card">
-              <p class="section-kicker">图片位置</p>
-              <h3>把你的 40 幅作品照片放在这里</h3>
-              <p>
-                `source-images/works/` 放原始作品图，`source-images/details/`
-                放原始细节图。执行构建时会自动压缩并生成网页可用图片到 `public/paintings/`。
-              </p>
-            </article>
-
-            <article class="info-card">
-              <p class="section-kicker">JSON 配置位置</p>
-              <h3>主要改这两个文件</h3>
-              <p>
-                `public/data/site.json` 维护站点标题、简介和联系信息；`public/data/artworks.json`
-                维护作品列表、分类、尺寸、说明和所有图片路径。
-              </p>
-            </article>
           </div>
         </section>
       </main>

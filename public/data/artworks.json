@@ -1,232 +1,800 @@
 [
   {
-    "slug": "autumn-river",
-    "title": "雪岭静湖",
+    "slug": "snowy-track-dawn",
+    "title": "雪原晨光",
+    "category": "风景",
+    "series": "冬日原野",
+    "year": "2026",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "冬日雪原在低角度晨光下展开，车辙与树影把视线引向远处的亮处。",
+    "tags": ["冬景", "雪地", "晨光"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/works/snowy-track-dawn.webp",
+      "alt": "雪原晨光封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/snowy-track-dawn.webp",
+      "alt": "雪原晨光完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "white-cat-gaze",
+    "title": "白绒凝望",
+    "category": "动物",
+    "series": "猫咪肖像",
+    "year": "2026",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "以近距离笔触刻画白猫蓬松毛发与安静目光，背景处理克制柔和。",
+    "tags": ["猫咪", "白色", "肖像"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/white-cat-gaze.webp",
+      "alt": "白绒凝望封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/white-cat-gaze.webp",
+      "alt": "白绒凝望完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "misty-glance",
+    "title": "雾色回眸",
+    "category": "人物",
+    "series": "人物观察",
+    "year": "2026",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "冷灰背景衬托人物回望瞬间，强调肤色、发丝与黑色衣料的层次。",
+    "tags": ["人物", "灰调", "回望"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/works/misty-glance.webp",
+      "alt": "雾色回眸封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/misty-glance.webp",
+      "alt": "雾色回眸完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "silver-kitten",
+    "title": "银灰幼影",
+    "category": "动物",
+    "series": "猫咪肖像",
+    "year": "2026",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "以单色灰阶表现幼猫神情，突出眼神与绒毛质感。",
+    "tags": ["猫咪", "单色", "幼猫"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/silver-kitten.webp",
+      "alt": "银灰幼影封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/silver-kitten.webp",
+      "alt": "银灰幼影完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "winter-bouquet",
+    "title": "冬日花束",
+    "category": "花卉",
+    "series": "花卉静物",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "白玫瑰与蓝紫小花在灰色背景前形成温柔而克制的花束关系。",
+    "tags": ["花束", "玫瑰", "静物"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/winter-bouquet.webp",
+      "alt": "冬日花束封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/winter-bouquet.webp",
+      "alt": "冬日花束完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "frost-meadow-bank",
+    "title": "霜野静岸",
+    "category": "风景",
+    "series": "冬日原野",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "结霜草地、木栅与冬树交织出带有寒意的乡野景致。",
+    "tags": ["风景", "霜草", "冬日"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/frost-meadow-bank.webp",
+      "alt": "霜野静岸封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/frost-meadow-bank.webp",
+      "alt": "霜野静岸完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "shadowed-stare",
+    "title": "暗影对视",
+    "category": "主题",
+    "series": "想象叙事",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "近景对视的张力来自人物与猩猩的视线关系，画面带有叙事感。",
+    "tags": ["主题", "对视", "叙事"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/shadowed-stare.webp",
+      "alt": "暗影对视封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/shadowed-stare.webp",
+      "alt": "暗影对视完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "great-wall-dawn",
+    "title": "长城晨曦",
+    "category": "风景",
+    "series": "山川建筑",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "长城在晨曦与薄云中起伏延展，山体与城墙共同形成纵深。",
+    "tags": ["长城", "山景", "晨曦"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/works/great-wall-dawn.webp",
+      "alt": "长城晨曦封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/great-wall-dawn.webp",
+      "alt": "长城晨曦完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "crimson-lotus",
+    "title": "荷塘红莲",
+    "category": "花卉",
+    "series": "荷塘小景",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "红莲与荷叶以俯视构图展开，水面留白强化色彩对比。",
+    "tags": ["荷花", "俯视", "水面"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/crimson-lotus.webp",
+      "alt": "荷塘红莲封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/crimson-lotus.webp",
+      "alt": "荷塘红莲完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "ripple-study",
+    "title": "水纹之境",
+    "category": "风景",
+    "series": "水面研究",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "以水纹与倒影为主体，捕捉风过水面时细密而流动的节奏。",
+    "tags": ["水纹", "倒影", "局部"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/ripple-study.webp",
+      "alt": "水纹之境封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/ripple-study.webp",
+      "alt": "水纹之境完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "marsh-lilies",
+    "title": "湿地浮莲",
+    "category": "风景",
+    "series": "湿地印象",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "低饱和湿地与浮莲相互映衬，营造开阔而安静的水岸氛围。",
+    "tags": ["湿地", "睡莲", "湖面"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/marsh-lilies.webp",
+      "alt": "湿地浮莲封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/marsh-lilies.webp",
+      "alt": "湿地浮莲完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "poppy-meadow",
+    "title": "罂粟之野",
+    "category": "花卉",
+    "series": "花野风景",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "大片罂粟在晴朗天空下铺展开来，红色花面与远树形成鲜明节奏。",
+    "tags": ["花田", "罂粟", "原野"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/poppy-meadow.webp",
+      "alt": "罂粟之野封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/poppy-meadow.webp",
+      "alt": "罂粟之野完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "violet-forest-path",
+    "title": "紫径林光",
+    "category": "风景",
+    "series": "林间花径",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "紫色花海沿林间小径展开，明亮树冠与阴影路径形成引导。",
+    "tags": ["林间", "花海", "小径"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/violet-forest-path.webp",
+      "alt": "紫径林光封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/violet-forest-path.webp",
+      "alt": "紫径林光完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "solitary-reflection",
+    "title": "孤树成影",
+    "category": "风景",
+    "series": "极简风景",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "极简画面只保留一株树与水中倒影，气氛空灵而安静。",
+    "tags": ["孤树", "倒影", "极简"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/solitary-reflection.webp",
+      "alt": "孤树成影封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/solitary-reflection.webp",
+      "alt": "孤树成影完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "misty-mountain-lake",
+    "title": "雾山静湖",
     "category": "风景",
     "series": "山地湖景",
-    "year": "2026",
+    "year": "2025",
     "medium": "布面油画",
-    "size": "80 x 60 cm",
-    "description": "画面以静止的高山湖面为中心，将雪岭、密林与近岸岩石纳入同一片清冷而明亮的空气中。远处山体的冷白与湖岸林木的深绿形成鲜明对照，水中的倒影又让整个空间更安静、更悠长，像是在捕捉山地清晨尚未被打破的片刻宁静。",
-    "tags": ["风景", "雪山", "湖泊", "森林", "倒影"],
-    "featured": true,
+    "size": "尺寸待补充",
+    "description": "层叠山体与镜面湖水在柔雾中相接，整体色调克制宁静。",
+    "tags": ["山湖", "倒影", "薄雾"],
+    "featured": false,
     "cover": {
-      "src": "/paintings/works/autumn-river-full.webp",
-      "alt": "雪岭静湖封面图"
+      "src": "/paintings/works/misty-mountain-lake.webp",
+      "alt": "雾山静湖封面图"
     },
     "fullImage": {
-      "src": "/paintings/works/autumn-river-full.webp",
-      "alt": "雪岭静湖完整图"
+      "src": "/paintings/works/misty-mountain-lake.webp",
+      "alt": "雾山静湖完整图"
     },
-    "details": [
-      {
-        "src": "/paintings/details/autumn-river-detail-1.webp",
-        "alt": "雪岭静湖细节图一"
-      },
-      {
-        "src": "/paintings/details/autumn-river-detail-2.webp",
-        "alt": "雪岭静湖细节图二"
-      },
-      {
-        "src": "/paintings/details/autumn-river-detail-3.webp",
-        "alt": "雪岭静湖细节图三"
-      },
-      {
-        "src": "/paintings/details/autumn-river-detail-4.webp",
-        "alt": "雪岭静湖细节图四"
-      },
-      {
-        "src": "/paintings/details/autumn-river-detail-5.webp",
-        "alt": "雪岭静湖细节图五"
-      },
-      {
-        "src": "/paintings/details/autumn-river-detail-6.webp",
-        "alt": "雪岭静湖细节图六"
-      },
-      {
-        "src": "/paintings/details/autumn-river-detail-7.webp",
-        "alt": "雪岭静湖细节图七"
-      }
-    ]
+    "details": []
   },
   {
-    "slug": "ember-dawn",
-    "title": "余烬晨光",
-    "category": "风景",
-    "series": "光色练习",
-    "year": "2026",
-    "medium": "布面油画",
-    "size": "80 x 60 cm",
-    "description": "这是一条示例数据，用来展示你未来真实作品的排版效果。你可以在这里写下创作时关注的光线变化、色温关系与情绪氛围。",
-    "tags": ["风景", "暖色调", "日出", "氛围感"],
-    "featured": true,
-    "cover": {
-      "src": "/paintings/placeholder-ember.svg",
-      "alt": "余烬晨光封面图"
-    },
-    "fullImage": {
-      "src": "/paintings/placeholder-ember.svg",
-      "alt": "余烬晨光完整图"
-    },
-    "details": [
-      {
-        "src": "/paintings/placeholder-ember.svg",
-        "alt": "余烬晨光细节图一"
-      },
-      {
-        "src": "/paintings/placeholder-ember.svg",
-        "alt": "余烬晨光细节图二"
-      }
-    ]
-  },
-  {
-    "slug": "coastal-wind",
-    "title": "海岸风起",
+    "slug": "ebb-tide-boat",
+    "title": "落潮归舟",
     "category": "风景",
     "series": "海边记录",
     "year": "2025",
-    "medium": "木板油画",
-    "size": "70 x 50 cm",
-    "description": "示例条目二，适合你用来记录海边、城市或郊野题材作品。建议完整图使用较高分辨率，细节图重点展示肌理和笔触。",
-    "tags": ["海景", "冷暖对比", "层次笔触"],
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "退潮后的滩涂、停泊小船与远处海边村落共同构成海岸黄昏。",
+    "tags": ["海岸", "小船", "黄昏"],
     "featured": true,
     "cover": {
-      "src": "/paintings/placeholder-coast.svg",
-      "alt": "海岸风起封面图"
+      "src": "/paintings/works/ebb-tide-boat.webp",
+      "alt": "落潮归舟封面图"
     },
     "fullImage": {
-      "src": "/paintings/placeholder-coast.svg",
-      "alt": "海岸风起完整图"
+      "src": "/paintings/works/ebb-tide-boat.webp",
+      "alt": "落潮归舟完整图"
     },
-    "details": [
-      {
-        "src": "/paintings/placeholder-coast.svg",
-        "alt": "海岸风起细节图一"
-      },
-      {
-        "src": "/paintings/placeholder-coast.svg",
-        "alt": "海岸风起细节图二"
-      }
-    ]
+    "details": []
   },
   {
-    "slug": "quiet-table",
-    "title": "静置之桌",
-    "category": "静物",
-    "series": "室内物语",
-    "year": "2024",
+    "slug": "blue-current",
+    "title": "蓝流微澜",
+    "category": "风景",
+    "series": "水面研究",
+    "year": "2025",
     "medium": "布面油画",
-    "size": "60 x 60 cm",
-    "description": "示例条目三，适合展示静物类油画。你可以把器物关系、空间组织、主色调以及创作背景写在这里。",
-    "tags": ["静物", "深色背景", "质感表现"],
+    "size": "尺寸待补充",
+    "description": "聚焦局部水面与细密波纹，强化蓝色反光的抽象节奏。",
+    "tags": ["水面", "蓝色", "波纹"],
     "featured": false,
     "cover": {
-      "src": "/paintings/placeholder-still-life.svg",
-      "alt": "静置之桌封面图"
+      "src": "/paintings/works/blue-current.webp",
+      "alt": "蓝流微澜封面图"
     },
     "fullImage": {
-      "src": "/paintings/placeholder-still-life.svg",
-      "alt": "静置之桌完整图"
+      "src": "/paintings/works/blue-current.webp",
+      "alt": "蓝流微澜完整图"
     },
-    "details": [
-      {
-        "src": "/paintings/placeholder-still-life.svg",
-        "alt": "静置之桌细节图一"
-      },
-      {
-        "src": "/paintings/placeholder-still-life.svg",
-        "alt": "静置之桌细节图二"
-      }
-    ]
+    "details": []
   },
   {
-    "slug": "portrait-in-blue",
-    "title": "蓝调肖像",
+    "slug": "autumn-oak",
+    "title": "秋树独立",
+    "category": "风景",
+    "series": "树木研究",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "独立的大树在金色季节中舒展枝冠，带有静默而坚定的力量。",
+    "tags": ["大树", "秋色", "草地"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/autumn-oak.webp",
+      "alt": "秋树独立封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/autumn-oak.webp",
+      "alt": "秋树独立完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "green-eyed-cat",
+    "title": "绿眸侧影",
+    "category": "动物",
+    "series": "猫咪肖像",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "从侧面近距离刻画猫的眼神与胡须，背景压暗以突出面部结构。",
+    "tags": ["猫咪", "绿眼", "侧脸"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/green-eyed-cat.webp",
+      "alt": "绿眸侧影封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/green-eyed-cat.webp",
+      "alt": "绿眸侧影完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "sunflower-squirrel",
+    "title": "向阳小守望",
+    "category": "动物",
+    "series": "田园动物",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "小松鼠停在木桩上啃食坚果，向日葵与晚霞让画面更温暖。",
+    "tags": ["松鼠", "向日葵", "黄昏"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/sunflower-squirrel.webp",
+      "alt": "向阳小守望封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/sunflower-squirrel.webp",
+      "alt": "向阳小守望完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "forest-rapid",
+    "title": "林涧激流",
+    "category": "风景",
+    "series": "溪流研究",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "岩石与急流在密林前形成强烈明暗对比，突出水花的速度感。",
+    "tags": ["溪流", "岩石", "森林"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/forest-rapid.webp",
+      "alt": "林涧激流封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/forest-rapid.webp",
+      "alt": "林涧激流完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "blue-water-study",
+    "title": "深蓝水面",
+    "category": "风景",
+    "series": "水面研究",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "以抽象化方式描绘水面起伏，用深浅蓝色组织流动关系。",
+    "tags": ["蓝调", "水面", "抽象"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/blue-water-study.webp",
+      "alt": "深蓝水面封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/blue-water-study.webp",
+      "alt": "深蓝水面完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "puddle-path",
+    "title": "雨后小径",
+    "category": "风景",
+    "series": "雨后小景",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "雨后泥径与积水倒影让普通乡间小路显出安静的诗意。",
+    "tags": ["雨后", "小路", "倒影"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/puddle-path.webp",
+      "alt": "雨后小径封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/puddle-path.webp",
+      "alt": "雨后小径完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "splashing-tiger",
+    "title": "涉水幼虎",
+    "category": "动物",
+    "series": "野性瞬间",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "幼虎踏水前行的瞬间被定格，水花与毛发共同强化动势。",
+    "tags": ["老虎", "水花", "动物"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/works/splashing-tiger.webp",
+      "alt": "涉水幼虎封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/splashing-tiger.webp",
+      "alt": "涉水幼虎完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "still-life-study",
+    "title": "静物习作",
+    "category": "静物",
+    "series": "静物习作",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "勺子、蛋壳、果实与花枝被并置在留白空间中，形成轻盈的静物关系。",
+    "tags": ["静物", "果实", "花枝"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/still-life-study.webp",
+      "alt": "静物习作封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/still-life-study.webp",
+      "alt": "静物习作完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "dark-horse-portrait",
+    "title": "夜色马肖像",
+    "category": "动物",
+    "series": "马匹肖像",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "在深色背景中刻画马的头部与颈部，强调沉静、敏感的眼神。",
+    "tags": ["马", "深色", "肖像"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/dark-horse-portrait.webp",
+      "alt": "夜色马肖像封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/dark-horse-portrait.webp",
+      "alt": "夜色马肖像完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "twin-red-roses",
+    "title": "双玫瑰",
+    "category": "花卉",
+    "series": "花卉静物",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "两朵红玫瑰在斜射光中投下长影，画面简洁而有戏剧性。",
+    "tags": ["玫瑰", "光影", "花卉"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/twin-red-roses.webp",
+      "alt": "双玫瑰封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/twin-red-roses.webp",
+      "alt": "双玫瑰完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "hillside-collie",
+    "title": "山岗边牧",
+    "category": "动物",
+    "series": "伴侣动物",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "山地草坡上的边牧迎风站立，呈现自由、敏锐的户外气息。",
+    "tags": ["边牧", "山地", "风"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/hillside-collie.webp",
+      "alt": "山岗边牧封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/hillside-collie.webp",
+      "alt": "山岗边牧完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "elder-profile-i",
+    "title": "银发侧像之一",
     "category": "人物",
-    "series": "人物观察",
+    "series": "肖像研究",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "银发老人侧像以深色背景承托，皱纹与毛发刻画细致。",
+    "tags": ["老人", "侧像", "肖像"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/elder-profile-i.webp",
+      "alt": "银发侧像之一封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/elder-profile-i.webp",
+      "alt": "银发侧像之一完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "red-apple",
+    "title": "红苹果",
+    "category": "静物",
+    "series": "静物小品",
     "year": "2024",
-    "medium": "亚麻布面油画",
-    "size": "90 x 70 cm",
-    "description": "如果你有人物题材，这里可以写人物姿态、背景关系和色调控制等内容。当前仍然使用占位图，后续替换为真实照片即可。",
-    "tags": ["人物", "冷色调", "肖像"],
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "以单个苹果为主体，练习果面体积、色彩过渡与投影关系。",
+    "tags": ["苹果", "静物", "练习"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/red-apple.webp",
+      "alt": "红苹果封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/red-apple.webp",
+      "alt": "红苹果完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "country-road",
+    "title": "原野道路",
+    "category": "风景",
+    "series": "乡野道路",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "阴云、树影与蜿蜒小路共同构成带有天气感的乡野道路。",
+    "tags": ["乡野", "道路", "天空"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/country-road.webp",
+      "alt": "原野道路封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/country-road.webp",
+      "alt": "原野道路完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "elder-profile-ii",
+    "title": "银发侧像之二",
+    "category": "人物",
+    "series": "肖像研究",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "另一版老人侧像更完整地保留肩部与服装关系，神情内敛沉稳。",
+    "tags": ["老人", "写实", "肖像"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/elder-profile-ii.webp",
+      "alt": "银发侧像之二封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/elder-profile-ii.webp",
+      "alt": "银发侧像之二完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "blue-eyed-rest",
+    "title": "蓝眸小憩",
+    "category": "动物",
+    "series": "猫咪肖像",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "蓝眼猫趴卧凝视前方，柔和灰调让神情显得更安静亲近。",
+    "tags": ["猫咪", "蓝眼", "休憩"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/blue-eyed-rest.webp",
+      "alt": "蓝眸小憩封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/blue-eyed-rest.webp",
+      "alt": "蓝眸小憩完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "pink-rose",
+    "title": "粉玫瑰",
+    "category": "花卉",
+    "series": "花卉静物",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "单枝粉玫瑰在虚化背景前被单独呈现，突出花瓣层次与透明感。",
+    "tags": ["粉玫瑰", "花卉", "单枝"],
     "featured": true,
     "cover": {
-      "src": "/paintings/placeholder-coast.svg",
-      "alt": "蓝调肖像封面图"
+      "src": "/paintings/works/pink-rose.webp",
+      "alt": "粉玫瑰封面图"
     },
     "fullImage": {
-      "src": "/paintings/placeholder-coast.svg",
-      "alt": "蓝调肖像完整图"
+      "src": "/paintings/works/pink-rose.webp",
+      "alt": "粉玫瑰完整图"
     },
-    "details": [
-      {
-        "src": "/paintings/placeholder-coast.svg",
-        "alt": "蓝调肖像细节图一"
-      },
-      {
-        "src": "/paintings/placeholder-coast.svg",
-        "alt": "蓝调肖像细节图二"
-      }
-    ]
+    "details": []
   },
   {
-    "slug": "orchid-afternoon",
-    "title": "兰影午后",
-    "category": "静物",
-    "series": "室内物语",
-    "year": "2023",
-    "medium": "木板油画",
-    "size": "50 x 40 cm",
-    "description": "多放几条示例作品可以让你更直观看到网站上线后的浏览节奏。真正录入 40 幅作品时，只需继续往这个 JSON 里追加对象。",
-    "tags": ["花卉", "静物", "高光"],
-    "featured": false,
-    "cover": {
-      "src": "/paintings/placeholder-still-life.svg",
-      "alt": "兰影午后封面图"
-    },
-    "fullImage": {
-      "src": "/paintings/placeholder-still-life.svg",
-      "alt": "兰影午后完整图"
-    },
-    "details": [
-      {
-        "src": "/paintings/placeholder-still-life.svg",
-        "alt": "兰影午后细节图一"
-      },
-      {
-        "src": "/paintings/placeholder-still-life.svg",
-        "alt": "兰影午后细节图二"
-      }
-    ]
-  },
-  {
-    "slug": "night-street",
-    "title": "夜行街角",
-    "category": "城市",
-    "series": "城市片段",
-    "year": "2023",
+    "slug": "cat-green-gaze",
+    "title": "绿眸凝视",
+    "category": "动物",
+    "series": "猫咪肖像",
+    "year": "2025",
     "medium": "布面油画",
-    "size": "100 x 80 cm",
-    "description": "如果你有城市夜景、街道或建筑相关作品，也可以单独用一个 category 来做筛选。页面会自动识别这些分类按钮。",
-    "tags": ["城市", "夜景", "反光"],
+    "size": "尺寸待补充",
+    "description": "更靠近的猫脸肖像聚焦绿色眼睛与鼻口结构，表情敏锐。",
+    "tags": ["猫咪", "绿眼", "特写"],
     "featured": false,
     "cover": {
-      "src": "/paintings/placeholder-ember.svg",
-      "alt": "夜行街角封面图"
+      "src": "/paintings/works/cat-green-gaze.webp",
+      "alt": "绿眸凝视封面图"
     },
     "fullImage": {
-      "src": "/paintings/placeholder-ember.svg",
-      "alt": "夜行街角完整图"
+      "src": "/paintings/works/cat-green-gaze.webp",
+      "alt": "绿眸凝视完整图"
     },
-    "details": [
-      {
-        "src": "/paintings/placeholder-ember.svg",
-        "alt": "夜行街角细节图一"
-      },
-      {
-        "src": "/paintings/placeholder-ember.svg",
-        "alt": "夜行街角细节图二"
-      }
-    ]
+    "details": []
+  },
+  {
+    "slug": "misty-morning-track",
+    "title": "雾晨小路",
+    "category": "风景",
+    "series": "乡野道路",
+    "year": "2024",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "晨雾与斜射光穿过树丛，乡间小路在潮湿空气中延伸。",
+    "tags": ["晨雾", "小路", "树影"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/misty-morning-track.webp",
+      "alt": "雾晨小路封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/misty-morning-track.webp",
+      "alt": "雾晨小路完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "tree-by-the-path",
+    "title": "树下小径",
+    "category": "风景",
+    "series": "田园风景",
+    "year": "2024",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "树下小路通向起伏田野，画面明亮、开阔，带有早春气息。",
+    "tags": ["田野", "树木", "路径"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/tree-by-the-path.webp",
+      "alt": "树下小径封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/tree-by-the-path.webp",
+      "alt": "树下小径完整图"
+    },
+    "details": []
+  },
+  {
+    "slug": "forest-guardian",
+    "title": "森林守卫",
+    "category": "主题",
+    "series": "想象叙事",
+    "year": "2025",
+    "medium": "布面油画",
+    "size": "尺寸待补充",
+    "description": "咆哮的猩猩角色置于洞穴与丛林环境中，偏向想象叙事创作。",
+    "tags": ["猩猩", "想象", "角色"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/works/forest-guardian.webp",
+      "alt": "森林守卫封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/forest-guardian.webp",
+      "alt": "森林守卫完整图"
+    },
+    "details": []
   }
 ]
