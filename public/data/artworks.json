@@ -1,0 +1,208 @@
+[
+  {
+    "slug": "autumn-river",
+    "title": "秋河",
+    "category": "风景",
+    "series": "河岸记录",
+    "year": "2026",
+    "medium": "布面油画",
+    "size": "80 x 60 cm",
+    "description": "这里写作品介绍。",
+    "tags": ["风景"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/works/autumn-river-full.webp",
+      "alt": "秋河封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/works/autumn-river-full.webp",
+      "alt": "秋河完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/details/autumn-river-detail-1.webp",
+        "alt": "秋河细节图一"
+      }
+    ]
+  },
+  {
+    "slug": "ember-dawn",
+    "title": "余烬晨光",
+    "category": "风景",
+    "series": "光色练习",
+    "year": "2026",
+    "medium": "布面油画",
+    "size": "80 x 60 cm",
+    "description": "这是一条示例数据，用来展示你未来真实作品的排版效果。你可以在这里写下创作时关注的光线变化、色温关系与情绪氛围。",
+    "tags": ["风景", "暖色调", "日出", "氛围感"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/placeholder-ember.svg",
+      "alt": "余烬晨光封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/placeholder-ember.svg",
+      "alt": "余烬晨光完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/placeholder-ember.svg",
+        "alt": "余烬晨光细节图一"
+      },
+      {
+        "src": "/paintings/placeholder-ember.svg",
+        "alt": "余烬晨光细节图二"
+      }
+    ]
+  },
+  {
+    "slug": "coastal-wind",
+    "title": "海岸风起",
+    "category": "风景",
+    "series": "海边记录",
+    "year": "2025",
+    "medium": "木板油画",
+    "size": "70 x 50 cm",
+    "description": "示例条目二，适合你用来记录海边、城市或郊野题材作品。建议完整图使用较高分辨率，细节图重点展示肌理和笔触。",
+    "tags": ["海景", "冷暖对比", "层次笔触"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/placeholder-coast.svg",
+      "alt": "海岸风起封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/placeholder-coast.svg",
+      "alt": "海岸风起完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/placeholder-coast.svg",
+        "alt": "海岸风起细节图一"
+      },
+      {
+        "src": "/paintings/placeholder-coast.svg",
+        "alt": "海岸风起细节图二"
+      }
+    ]
+  },
+  {
+    "slug": "quiet-table",
+    "title": "静置之桌",
+    "category": "静物",
+    "series": "室内物语",
+    "year": "2024",
+    "medium": "布面油画",
+    "size": "60 x 60 cm",
+    "description": "示例条目三，适合展示静物类油画。你可以把器物关系、空间组织、主色调以及创作背景写在这里。",
+    "tags": ["静物", "深色背景", "质感表现"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/placeholder-still-life.svg",
+      "alt": "静置之桌封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/placeholder-still-life.svg",
+      "alt": "静置之桌完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/placeholder-still-life.svg",
+        "alt": "静置之桌细节图一"
+      },
+      {
+        "src": "/paintings/placeholder-still-life.svg",
+        "alt": "静置之桌细节图二"
+      }
+    ]
+  },
+  {
+    "slug": "portrait-in-blue",
+    "title": "蓝调肖像",
+    "category": "人物",
+    "series": "人物观察",
+    "year": "2024",
+    "medium": "亚麻布面油画",
+    "size": "90 x 70 cm",
+    "description": "如果你有人物题材，这里可以写人物姿态、背景关系和色调控制等内容。当前仍然使用占位图，后续替换为真实照片即可。",
+    "tags": ["人物", "冷色调", "肖像"],
+    "featured": true,
+    "cover": {
+      "src": "/paintings/placeholder-coast.svg",
+      "alt": "蓝调肖像封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/placeholder-coast.svg",
+      "alt": "蓝调肖像完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/placeholder-coast.svg",
+        "alt": "蓝调肖像细节图一"
+      },
+      {
+        "src": "/paintings/placeholder-coast.svg",
+        "alt": "蓝调肖像细节图二"
+      }
+    ]
+  },
+  {
+    "slug": "orchid-afternoon",
+    "title": "兰影午后",
+    "category": "静物",
+    "series": "室内物语",
+    "year": "2023",
+    "medium": "木板油画",
+    "size": "50 x 40 cm",
+    "description": "多放几条示例作品可以让你更直观看到网站上线后的浏览节奏。真正录入 40 幅作品时，只需继续往这个 JSON 里追加对象。",
+    "tags": ["花卉", "静物", "高光"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/placeholder-still-life.svg",
+      "alt": "兰影午后封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/placeholder-still-life.svg",
+      "alt": "兰影午后完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/placeholder-still-life.svg",
+        "alt": "兰影午后细节图一"
+      },
+      {
+        "src": "/paintings/placeholder-still-life.svg",
+        "alt": "兰影午后细节图二"
+      }
+    ]
+  },
+  {
+    "slug": "night-street",
+    "title": "夜行街角",
+    "category": "城市",
+    "series": "城市片段",
+    "year": "2023",
+    "medium": "布面油画",
+    "size": "100 x 80 cm",
+    "description": "如果你有城市夜景、街道或建筑相关作品，也可以单独用一个 category 来做筛选。页面会自动识别这些分类按钮。",
+    "tags": ["城市", "夜景", "反光"],
+    "featured": false,
+    "cover": {
+      "src": "/paintings/placeholder-ember.svg",
+      "alt": "夜行街角封面图"
+    },
+    "fullImage": {
+      "src": "/paintings/placeholder-ember.svg",
+      "alt": "夜行街角完整图"
+    },
+    "details": [
+      {
+        "src": "/paintings/placeholder-ember.svg",
+        "alt": "夜行街角细节图一"
+      },
+      {
+        "src": "/paintings/placeholder-ember.svg",
+        "alt": "夜行街角细节图二"
+      }
+    ]
+  }
+]

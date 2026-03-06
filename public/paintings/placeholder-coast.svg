@@ -1,0 +1,18 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#101A22"/>
+  <rect width="1200" height="1500" fill="url(#paint0_linear_2_2)"/>
+  <path d="M0 717C174 630 331 587 473 587C615 587 757 646 902 646C1026 646 1125 616 1200 557V998H0V717Z" fill="#5B7991"/>
+  <path d="M0 930C188 885 350 875 485 902C654 936 767 1033 926 1033C1025 1033 1116 995 1200 936V1500H0V930Z" fill="#C6A178"/>
+  <path d="M0 1082C151 1050 308 1046 469 1071C676 1103 829 1191 986 1191C1070 1191 1141 1171 1200 1142V1500H0V1082Z" fill="#E7D4B6"/>
+  <path d="M126 515C239 396 355 335 474 332C579 329 705 384 852 495C751 463 655 452 565 462C409 479 290 555 126 515Z" fill="#D4E4F4" fill-opacity="0.7"/>
+  <circle cx="918" cy="263" r="108" fill="#F3D8A3"/>
+  <text x="74" y="1380" fill="#F3EEE5" fill-opacity="0.9" font-family="Georgia, serif" font-size="48">Swap this placeholder for a real painting image</text>
+  <defs>
+    <linearGradient id="paint0_linear_2_2" x1="600" y1="0" x2="600" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#24435A"/>
+      <stop offset="0.4" stop-color="#5F87A5"/>
+      <stop offset="0.68" stop-color="#3A5264"/>
+      <stop offset="1" stop-color="#171311"/>
+    </linearGradient>
+  </defs>
+</svg>

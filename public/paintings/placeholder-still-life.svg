@@ -1,0 +1,19 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#181514"/>
+  <rect width="1200" height="1500" fill="url(#paint0_radial_3_2)"/>
+  <rect x="144" y="248" width="912" height="816" rx="36" fill="#2A2220"/>
+  <rect x="182" y="286" width="836" height="740" rx="24" fill="#43312A"/>
+  <ellipse cx="626" cy="956" rx="273" ry="92" fill="#2E221E"/>
+  <path d="M614 448C696 448 762 512 762 590V656H466V596C466 514 532 448 614 448Z" fill="#C88245"/>
+  <path d="M394 840C394 735 479 650 584 650H643C748 650 833 735 833 840V896H394V840Z" fill="#855038"/>
+  <circle cx="520" cy="694" r="76" fill="#C94F3C"/>
+  <circle cx="696" cy="712" r="94" fill="#D7B45A"/>
+  <circle cx="611" cy="596" r="68" fill="#7AA36B"/>
+  <text x="220" y="1180" fill="#F6E9DA" fill-opacity="0.9" font-family="Georgia, serif" font-size="46">Put your still life or detail photo here</text>
+  <defs>
+    <radialGradient id="paint0_radial_3_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(602 412) rotate(90) scale(725 653.654)">
+      <stop stop-color="#6E4A35"/>
+      <stop offset="1" stop-color="#181514"/>
+    </radialGradient>
+  </defs>
+</svg>
