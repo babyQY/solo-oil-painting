@@ -11,8 +11,9 @@ const image = ref<HTMLImageElement | null>(null)
 const sideResult = ref<HTMLElement | null>(null)
 const inlineResult = ref<HTMLElement | null>(null)
 const hoverActive = ref(false)
-const touchZoomEnabled = ref(false)
+const touchZoomActive = ref(false)
 const supportsHoverZoom = ref(false)
+const isNarrowViewport = ref(false)
 const focusX = ref(50)
 const focusY = ref(50)
 const focusCanvasX = ref(0)
@@ -27,8 +28,8 @@ const inlineResultWidth = ref(0)
 const inlineResultHeight = ref(0)
 const zoomScale = 2.6
 
-const zoomVisible = computed(() => (supportsHoverZoom.value ? hoverActive.value : touchZoomEnabled.value))
-const sidePanelVisible = computed(() => supportsHoverZoom.value)
+const useDesktopHoverMode = computed(() => supportsHoverZoom.value && !isNarrowViewport.value)
+const zoomVisible = computed(() => (useDesktopHoverMode.value ? hoverActive.value : touchZoomActive.value))
 const lensStyle = computed(() => ({
   left: `${displayOffsetX.value + focusCanvasX.value}px`,
   top: `${displayOffsetY.value + focusCanvasY.value}px`,
@@ -113,7 +114,7 @@ function updateFocus(clientX: number, clientY: number) {
 }
 
 function handlePointerEnter(event: PointerEvent) {
-  if (!supportsHoverZoom.value) {
+  if (!useDesktopHoverMode.value) {
     return
   }
 
@@ -122,7 +123,7 @@ function handlePointerEnter(event: PointerEvent) {
 }
 
 function handlePointerMove(event: PointerEvent) {
-  if (!supportsHoverZoom.value && !touchZoomEnabled.value) {
+  if (!useDesktopHoverMode.value && !touchZoomActive.value) {
     return
   }
 
@@ -130,35 +131,45 @@ function handlePointerMove(event: PointerEvent) {
 }
 
 function handlePointerLeave() {
-  if (supportsHoverZoom.value) {
+  if (useDesktopHoverMode.value) {
     hoverActive.value = false
-  }
-}
-
-function handlePointerDown(event: PointerEvent) {
-  if (supportsHoverZoom.value) {
     return
   }
 
-  touchZoomEnabled.value = true
+  touchZoomActive.value = false
+}
+
+function handlePointerDown(event: PointerEvent) {
+  if (useDesktopHoverMode.value) {
+    return
+  }
+  touchZoomActive.value = true
   updateFocus(event.clientX, event.clientY)
 }
 
-function toggleTouchZoom() {
-  touchZoomEnabled.value = !touchZoomEnabled.value
+function handlePointerUp() {
+  if (!useDesktopHoverMode.value) {
+    touchZoomActive.value = false
+  }
+}
+
+function handleResize() {
+  isNarrowViewport.value = window.matchMedia('(max-width: 720px)').matches
+  syncMetrics()
 }
 
 onMounted(() => {
   supportsHoverZoom.value = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+  isNarrowViewport.value = window.matchMedia('(max-width: 720px)').matches
   nextTick(() => {
     syncMetrics()
     resetFocusToCenter()
   })
-  window.addEventListener('resize', syncMetrics)
+  window.addEventListener('resize', handleResize)
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', syncMetrics)
+  window.removeEventListener('resize', handleResize)
 })
 
 watch(
@@ -189,6 +200,8 @@ watch(
         @pointermove="handlePointerMove"
         @pointerleave="handlePointerLeave"
         @pointerdown="handlePointerDown"
+        @pointerup="handlePointerUp"
+        @pointercancel="handlePointerUp"
       >
         <img
           ref="image"
@@ -200,42 +213,29 @@ watch(
         />
 
         <div
-          v-if="zoomVisible"
+          v-if="useDesktopHoverMode && zoomVisible"
           class="magnifier-lens"
           :style="lensStyle"
         />
 
         <div
-          v-if="!supportsHoverZoom && zoomVisible"
+          v-if="!useDesktopHoverMode && zoomVisible"
           ref="inlineResult"
           class="magnifier-inline-result"
           :style="inlineResultStyle"
         />
 
-        <button
-          v-if="!supportsHoverZoom"
-          class="magnifier-mobile-toggle"
-          type="button"
-          @click.stop="toggleTouchZoom"
-        >
-          {{ touchZoomEnabled ? '关闭局部放大' : '开启局部放大' }}
-        </button>
       </div>
+
+      <div
+        v-if="useDesktopHoverMode && zoomVisible"
+        ref="sideResult"
+        class="magnifier-floating-result magnifier-result-active"
+        :style="sideResultStyle"
+      />
 
       <div class="magnifier-toolbar">
-        <span>{{ supportsHoverZoom ? '鼠标移动到画面上即可查看右侧局部预览' : '开启后在原图上拖动，可查看局部放大' }}</span>
-      </div>
-    </div>
-
-    <div v-if="sidePanelVisible" class="magnifier-side-panel">
-      <p class="section-kicker">局部放大</p>
-      <div
-        ref="sideResult"
-        class="magnifier-result"
-        :class="{ 'magnifier-result-active': zoomVisible }"
-        :style="zoomVisible ? sideResultStyle : undefined"
-      >
-        <span v-if="!zoomVisible" class="magnifier-result-hint">把鼠标移到左侧画面上</span>
+        <span>{{ useDesktopHoverMode ? '鼠标移动到画面上即可查看右侧悬浮预览' : '按住并拖动画面，即可查看叠层放大' }}</span>
       </div>
     </div>
   </div>

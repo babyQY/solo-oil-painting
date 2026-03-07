@@ -11,14 +11,36 @@ const router = createRouter({
       component: HomePage,
     },
     {
+      path: '/gallery',
+      name: 'gallery',
+      component: HomePage,
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: HomePage,
+    },
+    {
       path: '/artwork/:slug',
       name: 'artwork',
       component: ArtworkDetailPage,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/',
     },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
+    }
+
+    if (to.path === '/gallery') {
+      return { el: '#gallery', top: 84, behavior: 'smooth' }
+    }
+
+    if (to.path === '/contact') {
+      return { el: '#contact', top: 84, behavior: 'smooth' }
     }
 
     if (to.path !== from.path) {

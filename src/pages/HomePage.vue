@@ -123,14 +123,14 @@ onBeforeUnmount(() => {
 
     <template v-if="siteMeta">
       <header class="topbar">
-        <a class="brand" href="#top">
+        <RouterLink class="brand" to="/">
           <span class="brand-mark" />
           <span>{{ siteMeta.artistName }}</span>
-        </a>
+        </RouterLink>
 
         <nav class="nav">
-          <a href="#gallery">作品</a>
-          <a href="#contact">联系</a>
+          <RouterLink to="/gallery">作品</RouterLink>
+          <RouterLink to="/contact">联系</RouterLink>
         </nav>
       </header>
 
@@ -143,8 +143,8 @@ onBeforeUnmount(() => {
             <p class="hero-text">{{ siteMeta.description }}</p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#gallery">进入作品画廊</a>
-              <a class="button button-secondary" href="#contact">联系阿彬</a>
+              <RouterLink class="button button-primary" to="/gallery">进入作品画廊</RouterLink>
+              <RouterLink class="button button-secondary" to="/contact">联系阿彬</RouterLink>
             </div>
 
             <ul class="hero-stats" aria-label="站点亮点">
