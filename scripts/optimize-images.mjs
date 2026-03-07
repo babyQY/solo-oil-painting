@@ -149,6 +149,10 @@ async function syncArtworkCreatedAtOrder() {
 
   const withOrderMeta = items.map((item, index) => {
     const normalized = { ...item }
+    if (typeof normalized.sold !== 'boolean') {
+      normalized.sold = false
+      touched = true
+    }
     if (typeof normalized.createdAt !== 'string' || Number.isNaN(Date.parse(normalized.createdAt))) {
       let createdAtMs
       if (existingCreatedAtCount === 0) {

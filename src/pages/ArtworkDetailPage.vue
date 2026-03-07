@@ -32,6 +32,9 @@ const galleryImages = computed(() => {
 })
 
 const activeImage = computed(() => galleryImages.value[activeImageIndex.value] ?? null)
+const currentArtworkTags = computed(() =>
+  currentArtwork.value ? (currentArtwork.value.sold ? ['已售', ...currentArtwork.value.tags] : currentArtwork.value.tags) : [],
+)
 const previousArtwork = computed(() =>
   currentIndex.value > 0 ? artworks.value[currentIndex.value - 1] : null,
 )
@@ -137,6 +140,9 @@ onBeforeUnmount(() => {
               <p class="eyebrow">{{ currentArtwork.category }} / {{ currentArtwork.series }}</p>
               <h1>{{ currentArtwork.title }}</h1>
               <p class="hero-note">{{ currentArtwork.year }} · {{ currentArtwork.medium }} · {{ currentArtwork.size }}</p>
+              <div v-if="currentArtwork.sold" class="detail-status-row">
+                <span class="detail-status-badge">已售出</span>
+              </div>
               <p class="hero-text">{{ currentArtwork.description }}</p>
 
               <div class="detail-stage-nav">
@@ -195,7 +201,13 @@ onBeforeUnmount(() => {
               </div>
 
               <ul class="tag-list">
-                <li v-for="tag in currentArtwork.tags" :key="tag">{{ tag }}</li>
+                <li
+                  v-for="tag in currentArtworkTags"
+                  :key="tag"
+                  :class="{ 'tag-list-item-status': tag === '已售' }"
+                >
+                  {{ tag }}
+                </li>
               </ul>
             </aside>
           </section>

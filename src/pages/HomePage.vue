@@ -15,6 +15,8 @@ const loadError = ref('')
 const featuredCarouselIndex = ref(0)
 
 let featuredAutoplayTimer: number | undefined
+let emailCopiedTimer: number | undefined
+const emailCopied = ref(false)
 
 const categories = computed(() => {
   const values = new Set(artworks.value.map((artwork) => artwork.category))
@@ -88,6 +90,43 @@ function openArtwork(artwork: Artwork) {
   router.push({ name: 'artwork', params: { slug: artwork.slug } })
 }
 
+function getEmailAddressFromHref(href: string) {
+  return href.replace(/^mailto:/i, '').trim()
+}
+
+function getSocialLinkLabel(label: string, href: string) {
+  if (href.startsWith('mailto:') && emailCopied.value) {
+    return '已复制邮箱'
+  }
+  return label
+}
+
+async function handleSocialLinkClick(href: string, event: MouseEvent) {
+  if (!href.startsWith('mailto:')) {
+    return
+  }
+
+  event.preventDefault()
+  const email = getEmailAddressFromHref(href) || siteMeta.value?.email || ''
+  if (!email) {
+    return
+  }
+
+  try {
+    await navigator.clipboard.writeText(email)
+    emailCopied.value = true
+    if (emailCopiedTimer !== undefined) {
+      window.clearTimeout(emailCopiedTimer)
+    }
+    emailCopiedTimer = window.setTimeout(() => {
+      emailCopied.value = false
+      emailCopiedTimer = undefined
+    }, 1500)
+  } catch {
+    window.prompt('请复制邮箱地址：', email)
+  }
+}
+
 watch(
   featuredCarouselItems,
   (items) => {
@@ -113,6 +152,9 @@ onMounted(async () => {
 
 onBeforeUnmount(() => {
   stopFeaturedAutoplay()
+  if (emailCopiedTimer !== undefined) {
+    window.clearTimeout(emailCopiedTimer)
+  }
 })
 </script>
 
@@ -157,57 +199,70 @@ onBeforeUnmount(() => {
                 <span>自动生成细节图</span>
               </li>
             </ul>
+
+            <div v-if="siteMeta.introCards.length > 0" class="hero-quotes" aria-label="艺术哲思">
+              <article
+                v-for="card in siteMeta.introCards"
+                :key="card.title"
+                class="hero-quote-card"
+              >
+                <p class="hero-quote-title">{{ card.title }}</p>
+                <p class="hero-quote-body">{{ card.body }}</p>
+              </article>
+            </div>
           </div>
 
           <div class="hero-panel hero-panel-wide" @mouseenter="stopFeaturedAutoplay" @mouseleave="startFeaturedAutoplay">
             <p class="panel-label">Featured Work</p>
             <template v-if="activeFeaturedArtwork">
-              <div class="hero-carousel-stage">
-                <button class="hero-carousel-card painting-frame" type="button" @click="openArtwork(activeFeaturedArtwork)">
-                  <img
-                    class="painting-frame-image"
-                    :src="activeFeaturedArtwork.fullImage.src"
-                    :alt="activeFeaturedArtwork.fullImage.alt"
-                    loading="eager"
-                    decoding="async"
+              <div class="hero-carousel-shell">
+                <div class="hero-carousel-stage">
+                  <button class="hero-carousel-card painting-frame" type="button" @click="openArtwork(activeFeaturedArtwork)">
+                    <img
+                      class="painting-frame-image"
+                      :src="activeFeaturedArtwork.fullImage.src"
+                      :alt="activeFeaturedArtwork.fullImage.alt"
+                      loading="eager"
+                      decoding="async"
+                    />
+                    <div class="hero-carousel-overlay">
+                      <span>{{ activeFeaturedArtwork.year }} · {{ activeFeaturedArtwork.category }}</span>
+                      <strong>{{ activeFeaturedArtwork.title }}</strong>
+                      <small>{{ activeFeaturedArtwork.series }}</small>
+                    </div>
+                  </button>
+
+                  <template v-if="featuredCarouselItems.length > 1">
+                    <button
+                      class="hero-carousel-arrow hero-carousel-arrow-prev"
+                      type="button"
+                      aria-label="上一张精选作品"
+                      @click="goToPrevFeatured"
+                    >
+                      <span class="hero-carousel-arrow-icon" aria-hidden="true" />
+                    </button>
+                    <button
+                      class="hero-carousel-arrow hero-carousel-arrow-next"
+                      type="button"
+                      aria-label="下一张精选作品"
+                      @click="goToNextFeatured"
+                    >
+                      <span class="hero-carousel-arrow-icon" aria-hidden="true" />
+                    </button>
+                  </template>
+                </div>
+
+                <div v-if="featuredCarouselItems.length > 1" class="hero-carousel-dots" aria-label="轮播切换">
+                  <button
+                    v-for="(artwork, index) in featuredCarouselItems"
+                    :key="artwork.slug"
+                    class="hero-carousel-dot"
+                    :class="{ 'hero-carousel-dot-active': index === featuredCarouselIndex }"
+                    type="button"
+                    :aria-label="`切换到第 ${index + 1} 张`"
+                    @click="goToFeatured(index)"
                   />
-                  <div class="hero-carousel-overlay">
-                    <span>{{ activeFeaturedArtwork.year }} · {{ activeFeaturedArtwork.category }}</span>
-                    <strong>{{ activeFeaturedArtwork.title }}</strong>
-                    <small>{{ activeFeaturedArtwork.series }}</small>
-                  </div>
-                </button>
-
-                <template v-if="featuredCarouselItems.length > 1">
-                  <button
-                    class="hero-carousel-arrow hero-carousel-arrow-prev"
-                    type="button"
-                    aria-label="上一张精选作品"
-                    @click="goToPrevFeatured"
-                  >
-                    <span class="hero-carousel-arrow-icon" aria-hidden="true" />
-                  </button>
-                  <button
-                    class="hero-carousel-arrow hero-carousel-arrow-next"
-                    type="button"
-                    aria-label="下一张精选作品"
-                    @click="goToNextFeatured"
-                  >
-                    <span class="hero-carousel-arrow-icon" aria-hidden="true" />
-                  </button>
-                </template>
-              </div>
-
-              <div v-if="featuredCarouselItems.length > 1" class="hero-carousel-dots" aria-label="轮播切换">
-                <button
-                  v-for="(artwork, index) in featuredCarouselItems"
-                  :key="artwork.slug"
-                  class="hero-carousel-dot"
-                  :class="{ 'hero-carousel-dot-active': index === featuredCarouselIndex }"
-                  type="button"
-                  :aria-label="`切换到第 ${index + 1} 张`"
-                  @click="goToFeatured(index)"
-                />
+                </div>
               </div>
             </template>
           </div>
@@ -219,7 +274,7 @@ onBeforeUnmount(() => {
               <p class="section-kicker">Gallery</p>
               <h2>作品画廊</h2>
             </div>
-            <p class="section-note">H5 端尽量满屏展示，点击作品进入独立详情页。</p>
+            <p class="section-note">“艺术并不复制可见之物，而是使其可见。”</p>
           </div>
 
           <div class="gallery-toolbar gallery-toolbar-compact">
@@ -244,7 +299,7 @@ onBeforeUnmount(() => {
 
           <div class="gallery-summary gallery-summary-tight">
             <p>共展示 {{ filteredArtworks.length }} 幅作品</p>
-            <p>详情页支持独立访问、自动细节图与局部放大。</p>
+            <p>“绘画是无声的诗，诗是有声的画。”</p>
           </div>
 
           <div class="artwork-grid artwork-grid-dense">
@@ -271,8 +326,15 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="footer-links">
-          <a v-for="link in siteMeta.socialLinks" :key="link.label" :href="link.href" target="_blank" rel="noreferrer">
-            {{ link.label }}
+          <a
+            v-for="link in siteMeta.socialLinks"
+            :key="link.label"
+            :href="link.href"
+            :target="link.href.startsWith('mailto:') ? undefined : '_blank'"
+            rel="noreferrer"
+            @click="handleSocialLinkClick(link.href, $event)"
+          >
+            {{ getSocialLinkLabel(link.label, link.href) }}
           </a>
         </div>
 

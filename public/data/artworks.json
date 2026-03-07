@@ -23,7 +23,8 @@
       "alt": "秋湖映山完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.255Z"
+    "createdAt": "2026-03-07T01:55:10.255Z",
+    "sold": false
   },
   {
     "slug": "snowy-track-dawn",
@@ -49,7 +50,8 @@
       "alt": "雪原晨光完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.254Z"
+    "createdAt": "2026-03-07T01:55:10.254Z",
+    "sold": false
   },
   {
     "slug": "white-cat-gaze",
@@ -75,7 +77,8 @@
       "alt": "白绒凝望完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.253Z"
+    "createdAt": "2026-03-07T01:55:10.253Z",
+    "sold": true
   },
   {
     "slug": "misty-glance",
@@ -101,7 +104,8 @@
       "alt": "雾色回眸完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.252Z"
+    "createdAt": "2026-03-07T01:55:10.252Z",
+    "sold": false
   },
   {
     "slug": "silver-kitten",
@@ -127,7 +131,8 @@
       "alt": "银灰幼影完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.251Z"
+    "createdAt": "2026-03-07T01:55:10.251Z",
+    "sold": true
   },
   {
     "slug": "winter-bouquet",
@@ -153,7 +158,8 @@
       "alt": "冬日花束完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.250Z"
+    "createdAt": "2026-03-07T01:55:10.250Z",
+    "sold": false
   },
   {
     "slug": "frost-meadow-bank",
@@ -179,7 +185,8 @@
       "alt": "霜野静岸完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.249Z"
+    "createdAt": "2026-03-07T01:55:10.249Z",
+    "sold": false
   },
   {
     "slug": "shadowed-stare",
@@ -205,7 +212,8 @@
       "alt": "暗影对视完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.248Z"
+    "createdAt": "2026-03-07T01:55:10.248Z",
+    "sold": false
   },
   {
     "slug": "great-wall-dawn",
@@ -231,7 +239,8 @@
       "alt": "长城晨曦完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.247Z"
+    "createdAt": "2026-03-07T01:55:10.247Z",
+    "sold": false
   },
   {
     "slug": "crimson-lotus",
@@ -257,7 +266,8 @@
       "alt": "荷塘红莲完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.246Z"
+    "createdAt": "2026-03-07T01:55:10.246Z",
+    "sold": false
   },
   {
     "slug": "ripple-study",
@@ -283,7 +293,8 @@
       "alt": "水纹之境完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.245Z"
+    "createdAt": "2026-03-07T01:55:10.245Z",
+    "sold": true
   },
   {
     "slug": "marsh-lilies",
@@ -309,7 +320,8 @@
       "alt": "湿地浮莲完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.244Z"
+    "createdAt": "2026-03-07T01:55:10.244Z",
+    "sold": false
   },
   {
     "slug": "poppy-meadow",
@@ -335,7 +347,8 @@
       "alt": "罂粟之野完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.243Z"
+    "createdAt": "2026-03-07T01:55:10.243Z",
+    "sold": false
   },
   {
     "slug": "violet-forest-path",
@@ -361,7 +374,8 @@
       "alt": "紫径林光完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.242Z"
+    "createdAt": "2026-03-07T01:55:10.242Z",
+    "sold": false
   },
   {
     "slug": "solitary-reflection",
@@ -387,7 +401,8 @@
       "alt": "孤树成影完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.241Z"
+    "createdAt": "2026-03-07T01:55:10.241Z",
+    "sold": false
   },
   {
     "slug": "misty-mountain-lake",
@@ -413,7 +428,8 @@
       "alt": "雾山静湖完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.240Z"
+    "createdAt": "2026-03-07T01:55:10.240Z",
+    "sold": false
   },
   {
     "slug": "ebb-tide-boat",
@@ -439,7 +455,8 @@
       "alt": "落潮归舟完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.239Z"
+    "createdAt": "2026-03-07T01:55:10.239Z",
+    "sold": false
   },
   {
     "slug": "blue-current",
@@ -465,7 +482,8 @@
       "alt": "蓝流微澜完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.238Z"
+    "createdAt": "2026-03-07T01:55:10.238Z",
+    "sold": true
   },
   {
     "slug": "autumn-oak",
@@ -491,7 +509,8 @@
       "alt": "秋树独立完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.237Z"
+    "createdAt": "2026-03-07T01:55:10.237Z",
+    "sold": false
   },
   {
     "slug": "green-eyed-cat",
@@ -517,7 +536,8 @@
       "alt": "绿眸侧影完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.236Z"
+    "createdAt": "2026-03-07T01:55:10.236Z",
+    "sold": false
   },
   {
     "slug": "sunflower-squirrel",
@@ -543,7 +563,8 @@
       "alt": "向阳小守望完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.235Z"
+    "createdAt": "2026-03-07T01:55:10.235Z",
+    "sold": false
   },
   {
     "slug": "forest-rapid",
@@ -569,7 +590,8 @@
       "alt": "林涧激流完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.234Z"
+    "createdAt": "2026-03-07T01:55:10.234Z",
+    "sold": false
   },
   {
     "slug": "blue-water-study",
@@ -595,7 +617,8 @@
       "alt": "深蓝水面完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.233Z"
+    "createdAt": "2026-03-07T01:55:10.233Z",
+    "sold": false
   },
   {
     "slug": "puddle-path",
@@ -621,7 +644,8 @@
       "alt": "雨后小径完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.232Z"
+    "createdAt": "2026-03-07T01:55:10.232Z",
+    "sold": true
   },
   {
     "slug": "splashing-tiger",
@@ -647,7 +671,8 @@
       "alt": "涉水幼虎完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.231Z"
+    "createdAt": "2026-03-07T01:55:10.231Z",
+    "sold": false
   },
   {
     "slug": "still-life-study",
@@ -673,7 +698,8 @@
       "alt": "静物习作完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.230Z"
+    "createdAt": "2026-03-07T01:55:10.230Z",
+    "sold": false
   },
   {
     "slug": "dark-horse-portrait",
@@ -699,7 +725,8 @@
       "alt": "夜色马肖像完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.229Z"
+    "createdAt": "2026-03-07T01:55:10.229Z",
+    "sold": false
   },
   {
     "slug": "twin-red-roses",
@@ -725,7 +752,8 @@
       "alt": "双玫瑰完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.228Z"
+    "createdAt": "2026-03-07T01:55:10.228Z",
+    "sold": false
   },
   {
     "slug": "hillside-collie",
@@ -751,7 +779,8 @@
       "alt": "山岗边牧完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.227Z"
+    "createdAt": "2026-03-07T01:55:10.227Z",
+    "sold": false
   },
   {
     "slug": "elder-profile-i",
@@ -777,7 +806,8 @@
       "alt": "银发侧像之一完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.226Z"
+    "createdAt": "2026-03-07T01:55:10.226Z",
+    "sold": true
   },
   {
     "slug": "red-apple",
@@ -803,7 +833,8 @@
       "alt": "红苹果完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.225Z"
+    "createdAt": "2026-03-07T01:55:10.225Z",
+    "sold": false
   },
   {
     "slug": "country-road",
@@ -829,7 +860,8 @@
       "alt": "原野道路完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.224Z"
+    "createdAt": "2026-03-07T01:55:10.224Z",
+    "sold": false
   },
   {
     "slug": "elder-profile-ii",
@@ -855,7 +887,8 @@
       "alt": "银发侧像之二完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.223Z"
+    "createdAt": "2026-03-07T01:55:10.223Z",
+    "sold": true
   },
   {
     "slug": "blue-eyed-rest",
@@ -881,7 +914,8 @@
       "alt": "蓝眸小憩完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.222Z"
+    "createdAt": "2026-03-07T01:55:10.222Z",
+    "sold": true
   },
   {
     "slug": "pink-rose",
@@ -907,7 +941,8 @@
       "alt": "粉玫瑰完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.221Z"
+    "createdAt": "2026-03-07T01:55:10.221Z",
+    "sold": false
   },
   {
     "slug": "cat-green-gaze",
@@ -923,7 +958,7 @@
       "绿眼",
       "特写"
     ],
-    "featured": false,
+    "featured": true,
     "cover": {
       "src": "/paintings/works/cat-green-gaze.webp",
       "alt": "绿眸凝视封面图"
@@ -933,7 +968,8 @@
       "alt": "绿眸凝视完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.220Z"
+    "createdAt": "2026-03-07T01:55:10.220Z",
+    "sold": true
   },
   {
     "slug": "misty-morning-track",
@@ -959,7 +995,8 @@
       "alt": "雾晨小路完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.219Z"
+    "createdAt": "2026-03-07T01:55:10.219Z",
+    "sold": false
   },
   {
     "slug": "tree-by-the-path",
@@ -985,7 +1022,8 @@
       "alt": "树下小径完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.218Z"
+    "createdAt": "2026-03-07T01:55:10.218Z",
+    "sold": true
   },
   {
     "slug": "forest-guardian",
@@ -1011,6 +1049,7 @@
       "alt": "森林守卫完整图"
     },
     "details": [],
-    "createdAt": "2026-03-07T01:55:10.217Z"
+    "createdAt": "2026-03-07T01:55:10.217Z",
+    "sold": false
   }
 ]

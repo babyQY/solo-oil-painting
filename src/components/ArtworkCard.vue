@@ -1,13 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Artwork } from '../types'
 
-defineProps<{
+const props = defineProps<{
   artwork: Artwork
 }>()
 
 const emit = defineEmits<{
   select: [artwork: Artwork]
 }>()
+
+const displayTags = computed(() =>
+  props.artwork.sold ? ['已售', ...props.artwork.tags] : props.artwork.tags,
+)
 </script>
 
 <template>
@@ -18,9 +23,10 @@ const emit = defineEmits<{
         :alt="artwork.cover.alt"
         loading="lazy"
         decoding="async"
-        sizes="(max-width: 720px) 100vw, (max-width: 980px) 50vw, 33vw"
+        sizes="(max-width: 480px) 50vw, (max-width: 720px) 34vw, (max-width: 1100px) 34vw, 20vw"
       />
       <span v-if="artwork.featured" class="artwork-badge">精选</span>
+      <span v-if="artwork.sold" class="artwork-badge artwork-badge-sold">已售出</span>
     </div>
 
     <div class="artwork-card-body">
@@ -35,7 +41,13 @@ const emit = defineEmits<{
       <p class="artwork-card-medium">{{ artwork.medium }} · {{ artwork.series }}</p>
 
       <ul class="tag-list">
-        <li v-for="tag in artwork.tags" :key="tag">{{ tag }}</li>
+        <li
+          v-for="tag in displayTags"
+          :key="tag"
+          :class="{ 'tag-list-item-status': tag === '已售' }"
+        >
+          {{ tag }}
+        </li>
       </ul>
     </div>
   </button>
