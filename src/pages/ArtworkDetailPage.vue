@@ -144,31 +144,31 @@ onBeforeUnmount(() => {
                 <span class="detail-status-badge">已售出</span>
               </div>
               <p class="hero-text">{{ currentArtwork.description }}</p>
-
-              <div class="detail-stage-nav">
-                <RouterLink
-                  v-if="previousArtwork"
-                  class="detail-nav-card"
-                  :to="{ name: 'artwork', params: { slug: previousArtwork.slug } }"
-                >
-                  <span>上一幅</span>
-                  <strong>{{ previousArtwork.title }}</strong>
-                </RouterLink>
-                <RouterLink
-                  v-if="nextArtwork"
-                  class="detail-nav-card detail-nav-card-primary"
-                  :to="{ name: 'artwork', params: { slug: nextArtwork.slug } }"
-                >
-                  <span>下一幅</span>
-                  <strong>{{ nextArtwork.title }}</strong>
-                </RouterLink>
-              </div>
             </div>
           </section>
 
           <section class="detail-layout">
             <div class="detail-visual">
               <ImageMagnifier :src="activeImage.src" :alt="activeImage.alt" />
+
+              <div class="detail-stage-nav">
+                <RouterLink
+                  v-if="previousArtwork"
+                  class="detail-nav-card"
+                  :to="{ name: 'artwork', params: { slug: previousArtwork.slug } }"
+                  :aria-label="`上一幅：${previousArtwork.title}`"
+                >
+                  <span>← 上一幅</span>
+                </RouterLink>
+                <RouterLink
+                  v-if="nextArtwork"
+                  class="detail-nav-card detail-nav-card-primary"
+                  :to="{ name: 'artwork', params: { slug: nextArtwork.slug } }"
+                  :aria-label="`下一幅：${nextArtwork.title}`"
+                >
+                  <span>下一幅 →</span>
+                </RouterLink>
+              </div>
 
               <div class="detail-thumb-strip">
                 <button

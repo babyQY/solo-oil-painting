@@ -740,13 +740,17 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  align-items: center;
+  margin: 10px 0 12px;
 }
 
 .detail-nav-card {
-  display: grid;
-  gap: 4px;
-  min-width: min(46vw, 240px);
-  padding: 16px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 132px;
+  min-height: 44px;
+  padding: 0 16px;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(8, 8, 8, 0.34);
@@ -754,12 +758,10 @@ img {
 }
 
 .detail-nav-card span {
-  color: var(--muted-soft);
-  font-size: 0.88rem;
-}
-
-.detail-nav-card strong {
-  font-size: 1.06rem;
+  color: #f8f2e9;
+  font-size: 0.92rem;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .detail-nav-card-primary {
@@ -1205,7 +1207,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .section-heading-inline {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     gap: 8px;
   }
 
@@ -1215,11 +1217,11 @@ body::-webkit-scrollbar-thumb {
   }
 
   .gallery-toolbar-compact {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .gallery-summary-tight {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .gallery-summary p {
@@ -1232,7 +1234,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .filter-group {
-    gap: 8px;
+    gap: 6px;
   }
 
   .filter-pill {
@@ -1242,19 +1244,19 @@ body::-webkit-scrollbar-thumb {
   }
 
   .search-box input {
-    min-height: 40px;
-    padding: 0 14px;
+    min-height: 38px;
+    padding: 0 12px;
     font-size: 0.9rem;
   }
 
   .artwork-grid-dense {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .artwork-card {
-    margin: 0 0 8px;
-    padding: 8px;
+    margin: 0;
+    padding: 7px;
     border-radius: 14px;
   }
 
@@ -1263,7 +1265,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .artwork-card-body {
-    padding: 10px 2px 2px;
+    padding: 8px 2px 2px;
   }
 
   .artwork-card-head p {
@@ -1281,17 +1283,17 @@ body::-webkit-scrollbar-thumb {
   }
 
   .artwork-card-medium {
-    margin: 5px 0 8px;
+    margin: 4px 0 6px;
     font-size: 0.82rem;
   }
 
   .tag-list {
-    gap: 6px;
+    gap: 5px;
   }
 
   .tag-list li {
-    padding: 5px 10px;
-    font-size: 0.78rem;
+    padding: 4px 9px;
+    font-size: 0.76rem;
   }
 
   .search-box {
@@ -1315,12 +1317,10 @@ body::-webkit-scrollbar-thumb {
 
   .detail-nav-card {
     min-width: 0;
-    padding: 10px 12px;
-    border-radius: 14px;
-  }
-
-  .detail-nav-card strong {
-    font-size: 0.94rem;
+    min-height: 38px;
+    padding: 0 14px;
+    border-radius: 999px;
+    flex: 0 0 auto;
   }
 
   .detail-thumb-strip {
@@ -1335,6 +1335,32 @@ body::-webkit-scrollbar-thumb {
   .detail-thumb-card span {
     margin-top: 5px;
     font-size: 0.76rem;
+  }
+
+  .detail-page {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .detail-stage-nav {
+    position: fixed;
+    left: 50%;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    z-index: 40;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(8, 8, 8, 0.72);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 18px 28px rgba(0, 0, 0, 0.28);
+    transform: translateX(-50%);
+    max-width: calc(100vw - 16px);
+    margin: 0;
+  }
+
+  .detail-stage-nav .detail-nav-card span {
+    font-size: 0.84rem;
   }
 
   .detail-sidebar {
@@ -1397,12 +1423,12 @@ body::-webkit-scrollbar-thumb {
   }
 
   .artwork-grid-dense {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .artwork-card {
-    padding: 10px;
+    padding: 8px;
   }
 
   .artwork-card-head {

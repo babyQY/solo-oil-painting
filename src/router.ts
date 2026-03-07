@@ -35,6 +35,10 @@ const router = createRouter({
       return savedPosition
     }
 
+    if (to.name === 'artwork' && from.name === 'artwork') {
+      return false
+    }
+
     if (to.path === '/gallery') {
       return { el: '#gallery', top: 84, behavior: 'smooth' }
     }
