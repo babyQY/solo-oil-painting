@@ -534,7 +534,7 @@
     "size": "40*40cm(16*16in)",
     "description": "在深色背景中刻画马的头部与颈部，强调沉静、敏感的眼神。",
     "tags": ["马", "深色", "肖像"],
-    "featured": false,
+    "featured": true,
     "cover": {
       "src": "/paintings/works/dark-horse-portrait.webp",
       "alt": "夜色马肖像封面图"
