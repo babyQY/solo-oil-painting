@@ -35,7 +35,7 @@ const filteredArtworks = computed(() => {
   })
 })
 
-const featuredArtworks = computed(() => artworks.value.filter((artwork) => artwork.featured).slice(0, 6))
+const featuredArtworks = computed(() => artworks.value.filter((artwork) => artwork.featured))
 const featuredCarouselItems = computed(() =>
   featuredArtworks.value.length > 0 ? featuredArtworks.value : artworks.value.slice(0, 1),
 )
@@ -65,6 +65,23 @@ function startFeaturedAutoplay() {
 
 function goToFeatured(index: number) {
   featuredCarouselIndex.value = index
+}
+
+function goToPrevFeatured() {
+  if (featuredCarouselItems.value.length <= 1) {
+    return
+  }
+  featuredCarouselIndex.value =
+    (featuredCarouselIndex.value - 1 + featuredCarouselItems.value.length) %
+    featuredCarouselItems.value.length
+}
+
+function goToNextFeatured() {
+  if (featuredCarouselItems.value.length <= 1) {
+    return
+  }
+  featuredCarouselIndex.value =
+    (featuredCarouselIndex.value + 1) % featuredCarouselItems.value.length
 }
 
 function openArtwork(artwork: Artwork) {
@@ -145,20 +162,41 @@ onBeforeUnmount(() => {
           <div class="hero-panel hero-panel-wide" @mouseenter="stopFeaturedAutoplay" @mouseleave="startFeaturedAutoplay">
             <p class="panel-label">Featured Work</p>
             <template v-if="activeFeaturedArtwork">
-              <button class="hero-carousel-card painting-frame" type="button" @click="openArtwork(activeFeaturedArtwork)">
-                <img
-                  class="painting-frame-image"
-                  :src="activeFeaturedArtwork.fullImage.src"
-                  :alt="activeFeaturedArtwork.fullImage.alt"
-                  loading="eager"
-                  decoding="async"
-                />
-                <div class="hero-carousel-overlay">
-                  <span>{{ activeFeaturedArtwork.year }} · {{ activeFeaturedArtwork.category }}</span>
-                  <strong>{{ activeFeaturedArtwork.title }}</strong>
-                  <small>{{ activeFeaturedArtwork.series }}</small>
-                </div>
-              </button>
+              <div class="hero-carousel-stage">
+                <button class="hero-carousel-card painting-frame" type="button" @click="openArtwork(activeFeaturedArtwork)">
+                  <img
+                    class="painting-frame-image"
+                    :src="activeFeaturedArtwork.fullImage.src"
+                    :alt="activeFeaturedArtwork.fullImage.alt"
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <div class="hero-carousel-overlay">
+                    <span>{{ activeFeaturedArtwork.year }} · {{ activeFeaturedArtwork.category }}</span>
+                    <strong>{{ activeFeaturedArtwork.title }}</strong>
+                    <small>{{ activeFeaturedArtwork.series }}</small>
+                  </div>
+                </button>
+
+                <template v-if="featuredCarouselItems.length > 1">
+                  <button
+                    class="hero-carousel-arrow hero-carousel-arrow-prev"
+                    type="button"
+                    aria-label="上一张精选作品"
+                    @click="goToPrevFeatured"
+                  >
+                    <span class="hero-carousel-arrow-icon" aria-hidden="true" />
+                  </button>
+                  <button
+                    class="hero-carousel-arrow hero-carousel-arrow-next"
+                    type="button"
+                    aria-label="下一张精选作品"
+                    @click="goToNextFeatured"
+                  >
+                    <span class="hero-carousel-arrow-icon" aria-hidden="true" />
+                  </button>
+                </template>
+              </div>
 
               <div v-if="featuredCarouselItems.length > 1" class="hero-carousel-dots" aria-label="轮播切换">
                 <button

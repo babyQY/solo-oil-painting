@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, stat } from 'node:fs/promises'
+import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises'
 import { extname, join, parse, relative, resolve } from 'node:path'
 import sharp from 'sharp'
 
@@ -106,6 +106,77 @@ async function loadArtworkMetaMap() {
   const raw = await readFile(artworksDataPath, 'utf8')
   const items = JSON.parse(raw)
   return new Map(items.map((item) => [item.slug, item]))
+}
+
+async function collectSourceWorkMtimeMap() {
+  const sourceDirectory = join(sourceRoot, 'works')
+  if (!(await pathExists(sourceDirectory))) {
+    return new Map()
+  }
+
+  const allFiles = await collectFiles(sourceDirectory)
+  const imageFiles = allFiles.filter((file) => supportedExtensions.has(extname(file).toLowerCase()))
+  const mtimeMap = new Map()
+
+  for (const file of imageFiles) {
+    const parsed = parse(file)
+    const fileStat = await stat(file)
+    mtimeMap.set(parsed.name, fileStat.mtimeMs)
+  }
+
+  return mtimeMap
+}
+
+function toIso(ms) {
+  return new Date(ms).toISOString()
+}
+
+async function syncArtworkCreatedAtOrder() {
+  if (!(await pathExists(artworksDataPath))) {
+    return
+  }
+
+  const raw = await readFile(artworksDataPath, 'utf8')
+  const items = JSON.parse(raw)
+  if (!Array.isArray(items) || items.length === 0) {
+    return
+  }
+
+  const sourceMtimeMap = await collectSourceWorkMtimeMap()
+  const existingCreatedAtCount = items.filter((item) => typeof item?.createdAt === 'string').length
+  const now = Date.now()
+  let touched = false
+
+  const withOrderMeta = items.map((item, index) => {
+    const normalized = { ...item }
+    if (typeof normalized.createdAt !== 'string' || Number.isNaN(Date.parse(normalized.createdAt))) {
+      let createdAtMs
+      if (existingCreatedAtCount === 0) {
+        // First migration: preserve current manual list order.
+        createdAtMs = now - index
+      } else {
+        createdAtMs = sourceMtimeMap.get(normalized.slug) ?? now
+      }
+      normalized.createdAt = toIso(createdAtMs)
+      touched = true
+    }
+    return { item: normalized, index }
+  })
+
+  withOrderMeta.sort((a, b) => {
+    const diff = Date.parse(b.item.createdAt) - Date.parse(a.item.createdAt)
+    if (diff !== 0) {
+      return diff
+    }
+    return a.index - b.index
+  })
+
+  const nextItems = withOrderMeta.map((entry) => entry.item)
+  const nextRaw = `${JSON.stringify(nextItems, null, 2)}\n`
+
+  if (touched || nextRaw !== raw) {
+    await writeFile(artworksDataPath, nextRaw, 'utf8')
+  }
 }
 
 async function optimizeFile(sourcePath, sourceType) {
@@ -222,6 +293,7 @@ async function generateAutoDetails(sourcePath, artworkMetaMap) {
 }
 
 async function run() {
+  await syncArtworkCreatedAtOrder()
   const artworkMetaMap = await loadArtworkMetaMap()
   const summary = {
     generated: 0,

@@ -5,6 +5,7 @@ export interface ArtworkImage {
 
 export interface Artwork {
   slug: string
+  createdAt?: string
   title: string
   category: string
   series: string

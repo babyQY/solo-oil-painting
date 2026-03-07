@@ -31,6 +31,14 @@ function normalizeArtwork(artwork: Artwork): Artwork {
   }
 }
 
+function parseCreatedAtTimestamp(artwork: Artwork) {
+  if (!artwork.createdAt) {
+    return 0
+  }
+  const ts = Date.parse(artwork.createdAt)
+  return Number.isFinite(ts) ? ts : 0
+}
+
 async function loadJson<T>(path: string): Promise<T> {
   const normalizedPath = withBase(path)
   const response = await fetch(normalizedPath)
@@ -48,5 +56,7 @@ export function loadSiteMeta() {
 
 export async function loadArtworks() {
   const items = await loadJson<Artwork[]>('/data/artworks.json')
-  return items.map(normalizeArtwork)
+  return items
+    .map(normalizeArtwork)
+    .sort((a, b) => parseCreatedAtTimestamp(b) - parseCreatedAtTimestamp(a))
 }
